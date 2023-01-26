@@ -49,6 +49,8 @@
   top: 0;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: -1;
+  transition: opacity 0.5s ease-out;
+  transition-delay: 0.2s;
 }
 
 .sa-cc-bar__container {
@@ -61,6 +63,7 @@
   box-shadow: 0 4px 30px rgba(121, 153, 175, 0.3),
     0 4px 8px rgba(121, 153, 175, 0.15), 0 0 0 1px #dee5ea inset;
   border-radius: 10px;
+  transition: transform 0.2s ease-out;
 }
 
 .sa-cc-bar__notification {
@@ -180,4 +183,12 @@
     font-size: 20px;
     margin-bottom: var(--sa-cc-mobile-pad);
   }
+}
+
+.sa-cc-bar.hiding:after {
+  opacity: 0;
+}
+
+.sa-cc-bar.hiding .sa-cc-bar__container {
+  transform: translateY(300px);
 }

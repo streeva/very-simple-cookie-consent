@@ -19,5 +19,8 @@ export default defineConfig(({ command, mode }) => {
         fileName: 'very-simple-cookie-consent',
       },
     },
+    test: {
+      environment: 'happy-dom',
+    },
   }
 })

@@ -1,19 +1,26 @@
-import cookieTools from './cookieTools'
+import cookieTools, { getBaseDomain } from './cookieTools'
 import addBar, { hideBar } from './addBar'
 import addGaScripts from './addGaScripts'
 import './styles.css'
 
 const TAG = 'GTM-1234567'
 const privacyPolicyLink = 'https://www.example.co.uk/legal/cookies/'
+const domain =
+  window.location.hostname === 'localhost' ? 'localhost' : getBaseDomain()
+const ct = cookieTools.init({
+  domain,
+  expires: 365,
+  sameSite: 'Lax',
+})
 
 const start = () => {
-  if (!cookieTools.hasMadeChoice()) {
+  if (!ct.hasMadeChoice()) {
     // Show consent bar
     addBar(privacyPolicyLink, approveHandler, declineHandler)
     return
   }
 
-  if (cookieTools.hasConsent()) {
+  if (ct.hasConsent()) {
     // load GA scripts
     addGaScripts(TAG)
     return
@@ -23,7 +30,7 @@ const start = () => {
 const approveHandler = (e: any) => {
   e.preventDefault()
   hideBar()
-  cookieTools.approve()
+  ct.approve()
   // load GA script
   addGaScripts(TAG)
 }
@@ -31,7 +38,7 @@ const approveHandler = (e: any) => {
 const declineHandler = (e: any) => {
   e.preventDefault()
   hideBar()
-  cookieTools.decline()
+  ct.decline()
 }
 
 start()

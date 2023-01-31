@@ -4,7 +4,10 @@ export default (tag: string) => {
 }
 
 const addHeadScript = (tag: string) => {
+  if (document.querySelector('#vs-cc-script')) return
+
   const script = document.createElement('script')
+  script.id = 'vs-cc-script'
   script.innerHTML = `
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -17,7 +20,10 @@ const addHeadScript = (tag: string) => {
 }
 
 const addBodyNoscript = (tag: string) => {
+  if (document.querySelector('#vs-cc-noscript')) return
+
   const noscript = document.createElement('noscript')
+  noscript.id = 'vs-cc-noscript'
   const iframe = document.createElement('iframe')
   iframe.src = `https://www.googletagmanager.com/ns.html?id=${tag}`
   iframe.width = '0'

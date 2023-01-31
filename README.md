@@ -15,13 +15,12 @@ const TAG = 'GTM-123ABCD'
 // Set privacy policy link
 const privacyPolicyLink = 'https://www.example.co.uk/legal/cookies/'
 
-// Determine whether localhost or normal domain such as example.com and
-// if so domain = .example.com
-const domain =
-  window.location.hostname === 'localhost' ? 'localhost' : getBaseDomain()
-
 // Set cookie attribute defaults with the following
-const ct = cookieTools.init({ domain: getBaseDomain() })
+const ct = cookieTools.init({
+  domain: getBaseDomain(),
+  expires: 365,
+  sameSite: 'Lax',
+})
 
 const start = () => {
   if (!ct.hasMadeChoice()) {

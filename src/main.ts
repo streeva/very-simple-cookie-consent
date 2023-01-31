@@ -5,10 +5,8 @@ import './styles.css'
 
 const TAG = 'GTM-1234567'
 const privacyPolicyLink = 'https://www.example.co.uk/legal/cookies/'
-const domain =
-  window.location.hostname === 'localhost' ? 'localhost' : getBaseDomain()
 const ct = cookieTools.init({
-  domain,
+  domain: getBaseDomain(),
   expires: 365,
   sameSite: 'Lax',
 })

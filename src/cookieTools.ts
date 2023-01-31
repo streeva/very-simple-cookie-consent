@@ -26,15 +26,18 @@ const cookieTools = {
 }
 
 export const getBaseDomain = (
-  regex = /\w*\.*?(com|co.uk|net|localhost)$/gi
+  hostname: string = window.location.hostname,
+  regex = /\w*\.*?(com|co.uk|net)$/gi
 ) => {
-  const match = window.location.hostname.match(regex)
+  if (hostname.includes('localhost')) return 'localhost'
+
+  const match = hostname.match(regex)
   let domain = ''
 
   if (match) {
     domain = match[0]
   } else {
-    domain = window.location.hostname
+    domain = hostname
   }
 
   return `.${domain}`

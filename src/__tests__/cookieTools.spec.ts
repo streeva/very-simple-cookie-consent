@@ -14,9 +14,12 @@ test('cookieTools.hasConsent()', () => {
 })
 
 test('getBaseDomain', () => {
-  expect(getBaseDomain('https://localhost:8080')).eq('localhost')
-  expect(getBaseDomain('https://example.com')).eq('.example.com')
-  expect(getBaseDomain('https://www.example.com')).eq('.example.com')
-  expect(getBaseDomain('https://bananas.example.com')).eq('.example.com')
-  expect(getBaseDomain('https://bananas.apples.example.com')).eq('.example.com')
+  expect(getBaseDomain('localhost:8080')).eq('localhost')
+  expect(getBaseDomain('example.com')).eq('.example.com')
+  expect(getBaseDomain('www.example.com')).eq('.example.com')
+  expect(getBaseDomain('bananas.example.com')).eq('.example.com')
+  expect(getBaseDomain('bananas.apples.example.com')).eq('.example.com')
+  expect(getBaseDomain('something-test-test-example.onrender.com')).eq(
+    'something-test-test-example.onrender.com'
+  )
 })

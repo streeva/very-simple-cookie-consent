@@ -13,7 +13,7 @@ const cookieTools = {
     )
   },
   hasConsent: () => {
-    return cookies.get('cookies-analytics') === true
+    return cookies.get('cookies-analytics') === 'true'
   },
   approve: () => {
     cookies.set('cookies-functional', true)
@@ -30,6 +30,7 @@ export const getBaseDomain = (
   regex = /\w*\.*?(com|co.uk|net)$/gi
 ) => {
   if (hostname.includes('localhost')) return 'localhost'
+  if (hostname.includes('onrender.com')) return hostname
 
   const match = hostname.match(regex)
   let domain = ''

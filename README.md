@@ -1,9 +1,14 @@
-import cookieTools from './cookieTools'
-import addBar, { hideBar } from './addBar'
-import addGaScripts from './addGaScripts'
-import './styles.css'
+# Very simple cookie consent
 
-const TAG = 'GTM-1234567'
+```js
+import {
+  cookieTools,
+  addBar,
+  hideBar,
+  addGaScripts,
+} from 'very-simple-cookie-consent'
+
+const TAG = 'GTM-123ABCD'
 const privacyPolicyLink = 'https://www.example.co.uk/legal/cookies/'
 
 const start = () => {
@@ -35,3 +40,4 @@ const declineHandler = (e: any) => {
 }
 
 start()
+```

@@ -1,0 +1,194 @@
+.vs-cc-bar {
+  --vs-cc-primary-font: 'Poppins', sans-serif;
+  --vs-cc-secondary-font: 'Open Sans', sans-serif;
+  --vs-cc-primary-color: #00a8f4;
+  --vs-cc-primary-color-2: #0095da;
+  --vs-cc-primary-color-3: #007fb9;
+  --vs-cc-secondary-color: #acacac;
+  --vs-cc-secondary-color-2: #868686;
+  --vs-cc-secondary-color-3: #7a7a7a;
+  --vs-cc-pos: 20px;
+  --vs-cc-pad: 30px;
+  --vs-cc-mobile-pad: 20px;
+  --vs-cc-btn-height: 52px;
+  --vs-cc-btn-height-sm: 38px;
+  --vs-cc-black: #4a4a4a;
+  --vs-cc-white: #fff;
+  --vs-cc-heading-black: #002d43;
+
+  position: relative;
+  z-index: 2000000000;
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.8;
+  font-family: var(--vs-cc-secondary-font);
+  color: var(--vs-cc-black);
+}
+
+.vs-cc-bar a {
+  color: #007bff;
+  text-decoration: none;
+}
+.vs-cc-bar a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.vs-cc-bar .no-margin {
+  margin: 0;
+  padding: 0;
+}
+
+.vs-cc-bar:after {
+  content: '';
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  transition: opacity 0.5s ease-out;
+  transition-delay: 0.2s;
+}
+
+.vs-cc-bar__container {
+  position: fixed;
+  bottom: var(--vs-cc-pos);
+  left: var(--vs-cc-pos);
+  right: var(--vs-cc-pos);
+  background: var(--vs-cc-white);
+  padding: var(--vs-cc-mobile-pad);
+  box-shadow: 0 4px 30px rgba(121, 153, 175, 0.3),
+    0 4px 8px rgba(121, 153, 175, 0.15), 0 0 0 1px #dee5ea inset;
+  border-radius: 10px;
+  transition: transform 0.2s ease-out;
+}
+
+.vs-cc-bar__notification {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vs-cc-bar__text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--vs-cc-mobile-pad);
+}
+
+.vs-cc-bar__actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vs-cc-bar__buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vs-cc-bar__button {
+  box-shadow: none;
+  cursor: pointer;
+  font-family: var(--vs-cc-secondary-font);
+  font-size: 16px;
+  font-weight: 600;
+  height: var(--vs-cc-btn-height-sm);
+  letter-spacing: 0;
+  padding: 0 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+  transition: 300ms ease;
+  white-space: nowrap;
+  z-index: 1;
+  color: var(--vs-cc-white);
+  border-color: var(--vs-cc-primary-color);
+  background-color: var(--vs-cc-primary-color);
+}
+
+.vs-cc-bar__button:hover {
+  border-color: var(--vs-cc-primary-color-2);
+  background-color: var(--vs-cc-primary-color-2);
+}
+
+.vs-cc-bar__button:focus,
+.vs-cc-bar__button:active {
+  border-color: var(--vs-cc-primary-color-3);
+  background-color: var(--vs-cc-primary-color-3);
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+.vs-cc-bar__button--primary {
+  margin-right: var(--vs-cc-pos);
+}
+
+.vs-cc-bar__button--secondary {
+  border-color: var(--vs-cc-secondary-color);
+  background-color: var(--vs-cc-secondary-color);
+}
+
+.vs-cc-bar__button--secondary:hover {
+  border-color: var(--vs-cc-secondary-color-2);
+  background-color: var(--vs-cc-secondary-color-2);
+}
+
+.vs-cc-bar__button--secondary:focus,
+.vs-cc-bar__button--secondary:active {
+  border-color: var(--vs-cc-secondary-color-3);
+  background-color: var(--vs-cc-secondary-color-3);
+}
+
+.vs-cc-bar__title {
+  font-size: 17px;
+  font-weight: 700;
+  font-family: var(--vs-cc-primary-font);
+  text-align: left;
+  padding: 0;
+  line-height: 1.2;
+  margin: 0 0 10px 0;
+  color: var(--vs-cc-heading-black);
+}
+
+@media (min-width: 576px) {
+  .vs-cc-bar {
+    font-size: inherit;
+  }
+
+  .vs-cc-bar__container {
+    padding: var(--vs-cc-pad);
+  }
+
+  .vs-cc-bar__notification {
+    flex-direction: row;
+  }
+
+  .vs-cc-bar__text {
+    margin-bottom: 0;
+    margin-right: var(--vs-cc-pad);
+  }
+
+  .vs-cc-bar__buttons {
+    margin-bottom: 0;
+  }
+
+  .vs-cc-bar__title {
+    font-size: 20px;
+    margin-bottom: var(--vs-cc-mobile-pad);
+  }
+}
+
+.vs-cc-bar.hiding:after {
+  opacity: 0;
+}
+
+.vs-cc-bar.hiding .vs-cc-bar__container {
+  transform: translateY(300px);
+}

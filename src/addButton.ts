@@ -1,15 +1,18 @@
 export default (
-  btnId: string,
+  parentContainer: Element | null,
   text: string,
   btnClass: string,
-  parentContainer: HTMLDivElement,
   handler: any
 ) => {
   const btn = document.createElement('button')
-  btn.id = btnId
+
   btn.innerText = text
-  btn.classList.add('sa-cc-bar__button', btnClass)
+
+  btn.classList.add('vs-cc-bar__button', btnClass)
+
   btn.addEventListener('click', handler)
-  parentContainer.querySelector('.sa-cc-bar__buttons')?.appendChild(btn)
+
+  parentContainer?.appendChild(btn)
+
   return btn
 }

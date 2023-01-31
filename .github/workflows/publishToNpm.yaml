@@ -1,0 +1,36 @@
+name: PublishToNPM
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-linux:
+    name: Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code onto host
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.13.0'
+          cache: 'npm'
+
+      - name: Output versions
+        run: |
+          echo "Node.js version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+      - name: NPM install
+        run: npm ci
+
+      - name: Build library
+        run: npm run build
+
+      - name: Publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
+          access: 'public'

@@ -1,8 +1,6 @@
-export default () => {
-  console.log('loading scripts')
-  const TAG = 'GTM-WSKPJM7'
-  addHeadScript(TAG)
-  addBodyNoscript(TAG)
+export default (tag: string) => {
+  addHeadScript(tag)
+  addBodyNoscript(tag)
 }
 
 const addHeadScript = (tag: string) => {

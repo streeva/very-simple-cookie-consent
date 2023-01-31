@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 
 export default defineConfig(({ command, mode }) => {
@@ -10,6 +11,13 @@ export default defineConfig(({ command, mode }) => {
     plugins: [],
     css: {
       devSourcemap: true,
+    },
+    build: {
+      lib: {
+        entry: resolve(__dirname, 'lib/main.ts'),
+        name: 'VerySimpleCookieConsent',
+        fileName: 'very-simple-cookie-consent',
+      },
     },
   }
 })

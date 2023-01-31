@@ -1,15 +1,16 @@
-import cookieTools from './cookieTools'
-import addBar, { hideBar } from './addBar'
-import addGaScripts from './addGaScripts'
-import './styles.css'
+import {
+  cookieTools,
+  addBar,
+  hideBar,
+  addGaScripts,
+} from './dist/very-simple-cookie-consent'
 
-const TAG = 'GTM-1234567'
-const privacyPolicyLink = 'https://www.example.co.uk/legal/cookies/'
+const TAG = 'GTM-WSKPJM7'
 
 const start = () => {
   if (!cookieTools.hasMadeChoice()) {
     // Show consent bar
-    addBar(privacyPolicyLink, approveHandler, declineHandler)
+    addBar(approveHandler, declineHandler)
     return
   }
 

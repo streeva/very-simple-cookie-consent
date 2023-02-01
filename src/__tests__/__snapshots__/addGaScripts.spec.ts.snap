@@ -1,9 +1,9 @@
 // Vitest Snapshot v1
 
-exports[`addGaScripts 1`] = `"<body><noscript><iframe style=\\"display:none;visibility:hidden\\"></iframe></noscript></body>"`;
+exports[`addGaScripts 1`] = `"<body><noscript id=\\"vs-cc-noscript\\"><iframe style=\\"display:none;visibility:hidden\\"></iframe></noscript></body>"`;
 
 exports[`addGaScripts 2`] = `
-"<head><script async=\\"\\" src=\\"https://www.googletagmanager.com/gtm.js?id=GA-123\\"></script><script>
+"<head><script async=\\"\\" src=\\"https://www.googletagmanager.com/gtm.js?id=GA-123\\"></script><script id=\\"vs-cc-script\\">
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

@@ -4,11 +4,12 @@ import wrapperHtml from './wrapperHtml'
 export default (
   privacyPolicyLink: string,
   approveHandler: any,
-  declineHandler: any
+  declineHandler: any,
+  html: string = wrapperHtml
 ) => {
   const ccWrapper = document.createElement('div')
   ccWrapper.id = 'vs-cc-wrapper'
-  ccWrapper.innerHTML = wrapperHtml
+  ccWrapper.innerHTML = html
 
   const buttonsWrapper = ccWrapper.querySelector('.vs-cc-bar__buttons')
 

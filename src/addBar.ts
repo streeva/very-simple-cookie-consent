@@ -17,14 +17,16 @@ export default (
     buttonsWrapper,
     'Accept',
     'vs-cc-bar__button--primary',
-    approveHandler
+    approveHandler,
+    { tabindex: 1 }
   )
 
   addButton(
     buttonsWrapper,
     'Decline',
     'vs-cc-bar__button--secondary',
-    declineHandler
+    declineHandler,
+    { tabindex: 2 }
   )
 
   document.body.appendChild(ccWrapper)

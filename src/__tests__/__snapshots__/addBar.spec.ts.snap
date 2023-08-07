@@ -6,16 +6,16 @@ exports[`addBar 1`] = `
   <div class=\\"vs-cc-bar__container\\">
     <div class=\\"vs-cc-bar__notification container\\" role=\\"alert\\">
       <div class=\\"vs-cc-bar__text\\">
-        <h2 class=\\"vs-cc-bar__title\\">🍪 Can we use optional cookies?</h2>
-        <p class=\\"no-margin\\">
+        <h2 class=\\"vs-cc-bar__title\\" tabindex=\\"1\\">🍪 Can we use optional cookies?</h2>
+        <p class=\\"no-margin\\" tabindex=\\"2\\">
           These cookies help us keep our website safe and give you a better
           experience. We won’t turn them on unless you accept. Want to know more
           or adjust your preferences? Here’s our
-          <a id=\\"vs-cc-bar__policy-link\\" href=\\"https://example.com/policy-link\\">cookie policy</a>.
+          <a id=\\"vs-cc-bar__policy-link\\" href=\\"https://example.com/policy-link\\" tabindex=\\"3\\">cookie policy</a>.
         </p>
       </div>
       <div class=\\"vs-cc-bar__actions\\">
-        <div class=\\"vs-cc-bar__buttons\\"><button class=\\"vs-cc-bar__button vs-cc-bar__button--primary\\">Accept</button><button class=\\"vs-cc-bar__button vs-cc-bar__button--secondary\\">Decline</button></div>
+        <div class=\\"vs-cc-bar__buttons\\"><button class=\\"vs-cc-bar__button vs-cc-bar__button--primary\\" tabindex=\\"4\\">Accept</button><button class=\\"vs-cc-bar__button vs-cc-bar__button--secondary\\" tabindex=\\"5\\">Decline</button></div>
       </div>
     </div>
   </div>

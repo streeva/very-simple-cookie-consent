@@ -3,8 +3,8 @@ export default `
   <div class="vs-cc-bar__container">
     <div class="vs-cc-bar__notification container" role="alert">
       <div class="vs-cc-bar__text">
-        <h2 class="vs-cc-bar__title">🍪 Can we use optional cookies?</h2>
-        <p class="no-margin">
+        <h2 class="vs-cc-bar__title" tabindex="1">🍪 Can we use optional cookies?</h2>
+        <p class="no-margin" tabindex="2">
           These cookies help us keep our website safe and give you a better
           experience. We won’t turn them on unless you accept. Want to know more
           or adjust your preferences? Here’s our

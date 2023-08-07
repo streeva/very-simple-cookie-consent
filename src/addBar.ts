@@ -17,21 +17,24 @@ export default (
     buttonsWrapper,
     'Accept',
     'vs-cc-bar__button--primary',
-    approveHandler
+    approveHandler,
+    { tabindex: 4 }
   )
 
   addButton(
     buttonsWrapper,
     'Decline',
     'vs-cc-bar__button--secondary',
-    declineHandler
+    declineHandler,
+    { tabindex: 5 }
   )
 
   document.body.appendChild(ccWrapper)
 
-  document
-    .querySelector('#vs-cc-bar__policy-link')
-    ?.setAttribute('href', privacyPolicyLink)
+  const policyLink = document.querySelector('#vs-cc-bar__policy-link')
+
+  policyLink?.setAttribute('href', privacyPolicyLink)
+  policyLink?.setAttribute('tabindex', '3')
 }
 
 export const hideBar = () => {

@@ -127,23 +127,24 @@ const declineHandler = (e: any) => {
 startExample()
 ```
 
-## HTML
-
-Generated HTML:
+## Generated HTML
 
 ```html
 <div id="vs-cc" class="vs-cc-bar">
   <div class="vs-cc-bar__container">
     <div class="vs-cc-bar__notification container" role="alert">
       <div class="vs-cc-bar__text">
-        <h2 class="vs-cc-bar__title">🍪 Can we use optional cookies?</h2>
-        <p class="no-margin">
+        <h2 class="vs-cc-bar__title" tabindex="1">
+          🍪 Can we use optional cookies?
+        </h2>
+        <p class="no-margin" tabindex="2">
           These cookies help us keep our website safe and give you a better
           experience. We won’t turn them on unless you accept. Want to know more
           or adjust your preferences? Here’s our
           <a
             id="vs-cc-bar__policy-link"
             href="https://www.example.com/legal/cookies/"
+            tabindex="3"
           >
             cookie policy
           </a>
@@ -152,10 +153,16 @@ Generated HTML:
       </div>
       <div class="vs-cc-bar__actions">
         <div class="vs-cc-bar__buttons">
-          <button class="vs-cc-bar__button vs-cc-bar__button--primary">
+          <button
+            class="vs-cc-bar__button vs-cc-bar__button--primary"
+            tabindex="4"
+          >
             Accept
           </button>
-          <button class="vs-cc-bar__button vs-cc-bar__button--secondary">
+          <button
+            class="vs-cc-bar__button vs-cc-bar__button--secondary"
+            tabindex="5"
+          >
             Decline
           </button>
         </div>
@@ -172,3 +179,25 @@ The following elements/css classes are required for it to function:
 
 - An element with css class `vs-cc-bar__buttons` so that buttons can be injected.
 - A href tag with id `vs-cc-bar__policy-link` so that privacy policy link can be added.
+
+## Flow for testing, PR and publishing to NPM
+
+```bash
+# Add a postfix, to the current version e.g. 1.0.7-alpha.0
+npm version prerelease --preid alpha
+
+# Make changes and build
+npm run build
+
+# And publish for testing
+npm publish
+
+# Once tested and working, patch the version e.g. 1.0.7
+npm version patch
+
+# Push changes up for PR
+git push ...etc
+
+# and publish once approved
+npm publish
+```

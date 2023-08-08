@@ -186,6 +186,9 @@ The following elements/css classes are required for it to function:
 # Add a postfix, to the current version e.g. 1.0.7-alpha.0
 npm version prerelease --preid alpha
 
+# The version can be pushed up e.g. to 1.0.7-alpha.0 by running
+npm version prerelease
+
 # Make changes and build
 npm run build
 

@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Check out code onto host
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '16.13.0'
+          node-version-file: .nvmrc
           cache: 'npm'
 
       - name: Output versions
@@ -30,7 +30,7 @@ jobs:
         run: npm run build
 
       - name: Publish to NPM
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
           access: 'public'

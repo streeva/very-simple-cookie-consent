@@ -3,6 +3,14 @@
 An early stages adaptable cookie consent bar module that provides HTML, CSS and helper methods.
 It will inject a GTM script if consent is given.
 
+## Development
+
+1. Run dev server: `npm run dev`
+2. Update code
+3. Run tests: `npm run test`
+4. Update version in `package.json`
+5. Automatically publishes to NPM when a release is created on GitHub via `.github/workflows/publishToNpm.yml` workflow
+
 ## Cookies
 
 Cookies added when consent is given are
